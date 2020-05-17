@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PostService } from './post.service';
+import { PostI } from '../../shared/models/post.interface';
+
+
 
 @Component({
   selector: 'app-post',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  @Input() post: PostI;
+
+  constructor(private postSvc: PostService) { }
 
   ngOnInit() {
+    
   }
 
 }
